@@ -1,5 +1,5 @@
 {% set name = "p_astro" %}
-{% set version = "0.3" %}
+{% set version = "0.4" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,25 +7,43 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3df0ab549f07f9de1c9e6b153e4cad65aedaca247d53665a197e78cc8ad80d2a
+  sha256: 3b84b06b587069f32c9b98a5f5aaafa8107ffbc555ff7d6a260897c3097cbff9
 
 build:
   number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  entry_points:
+    - em_bright_categorize = driver_scripts.categorize:main
+    - em_bright_dag_writer = driver_scripts.dag_writer:main
+    - em_bright_extract = driver_scripts.utils:extract
+    - em_bright_join = driver_scripts.utils:join
+    - em_bright_train = driver_scripts.utils:train
+    - p_astro_histogram_by_bin = driver_scripts.p_astro_utils:histogram_by_bin
+    - p_astro_compute_means = driver_scripts.p_astro_utils:compute_counts_mean
 
 requirements:
   host:
     - pip
-    - python >=3
     - pytest-runner
+    - python >=3.6
+    - setuptools
   run:
-    - python >=3
+    - astropy
+    - ligo-common
     - numpy
+    - pandas
+    - python >=3.6
+    - python-lal
+    - python-lalinspiral
+    - python-lalsimulation
+    - scikit-learn 0.19.2
     - scipy
 
 test:
   imports:
+    - ligo.computeDiskMass
+    - ligo.em_bright
     - ligo.p_astro
 
 about:
