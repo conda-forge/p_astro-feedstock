@@ -1,5 +1,5 @@
 {% set name = "p_astro" %}
-{% set version = "0.4" %}
+{% set version = "0.7" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3b84b06b587069f32c9b98a5f5aaafa8107ffbc555ff7d6a260897c3097cbff9
+  sha256: 18ce7573c148939d6d472657139be0d205a60c613c0375c61b2cd0c5e2b73855
 
 build:
   number: 0
