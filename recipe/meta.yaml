@@ -1,5 +1,5 @@
 {% set name = "p_astro" %}
-{% set version = "0.7" %}
+{% set version = "0.8.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 18ce7573c148939d6d472657139be0d205a60c613c0375c61b2cd0c5e2b73855
+  sha256: fbf8643319607958b6d5209b3e8c2bda2969a46242e074729fcb1438d2b22b59
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: "{{ PYTHON }} -m pip install . -v"
   entry_points:
     - em_bright_categorize = driver_scripts.categorize:main
     - em_bright_dag_writer = driver_scripts.dag_writer:main
@@ -30,6 +30,7 @@ requirements:
     - setuptools
   run:
     - astropy
+    - h5py
     - ligo-common
     - numpy
     - pandas
@@ -37,6 +38,7 @@ requirements:
     - python-lal
     - python-lalinspiral
     - python-lalsimulation
+    - python-ligo-lw
     - scikit-learn 0.19.2
     - scipy
 
@@ -51,7 +53,7 @@ about:
   doc_url: https://lscsoft.docs.ligo.org/p-astro/
   license: GPLv3
   license_family: GPL
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: LICENSE
   summary: Low-latency estimation of category-wise astrophysical probability of GW candidates
 
 extra:
