@@ -49,7 +49,8 @@ test:
     - ligo.p_astro
 
 about:
-  home: http://gracedb.ligo.org
+  home: https://lscsoft.docs.ligo.org/p-astro/
+  dev_url: https://git.ligo.org/lscsoft/p-astro/
   doc_url: https://lscsoft.docs.ligo.org/p-astro/
   license: GPLv3
   license_family: GPL
