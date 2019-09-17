@@ -1,7 +1,7 @@
 About p_astro
 =============
 
-Home: http://gracedb.ligo.org
+Home: https://lscsoft.docs.ligo.org/p-astro/
 
 Package license: GPLv3
 
