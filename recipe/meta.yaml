@@ -1,5 +1,5 @@
 {% set name = "p_astro" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fbf8643319607958b6d5209b3e8c2bda2969a46242e074729fcb1438d2b22b59
+  sha256: 5331f3a9f8cc77eb9c87b3769c859844f19e532081e553b3a32bae8e6f471aa6
 
 build:
   number: 0
@@ -49,7 +49,8 @@ test:
     - ligo.p_astro
 
 about:
-  home: http://gracedb.ligo.org
+  home: https://lscsoft.docs.ligo.org/p-astro/
+  dev_url: https://git.ligo.org/lscsoft/p-astro/
   doc_url: https://lscsoft.docs.ligo.org/p-astro/
   license: GPLv3
   license_family: GPL
