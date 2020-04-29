@@ -1,18 +1,18 @@
 {% set name = "p_astro" %}
-{% set version = "0.8.1" %}
+{% set version = "0.8.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5331f3a9f8cc77eb9c87b3769c859844f19e532081e553b3a32bae8e6f471aa6
+  sha256: 161a358bc0f807e6e1b396e37e551e3913a4afd24fe680e98865606d0b598c0f
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -v"
+  script: {{ PYTHON }} -m pip install . -v
   entry_points:
     - em_bright_categorize = driver_scripts.categorize:main
     - em_bright_dag_writer = driver_scripts.dag_writer:main
