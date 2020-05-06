@@ -1,0 +1,10 @@
+--- setup.py	2020-04-29 22:34:42.000000000 +0100
++++ setup.py	2020-05-06 18:03:13.000000000 +0100
+@@ -45,7 +45,6 @@
+     include_package_data=True,
+     setup_requires=['pytest-runner'],
+     tests_require=['pytest'],
+-    namespace_packages=['ligo'],
+     install_requires=[
+         'astropy',
+         'lalsuite',
