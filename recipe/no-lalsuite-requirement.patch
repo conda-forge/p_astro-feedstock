@@ -1,0 +1,12 @@
+diff --git a/setup.py b/setup.py
+index c2b8c6b..3b8b100 100644
+--- a/setup.py
++++ b/setup.py
+@@ -48,7 +48,6 @@ setup(
+     namespace_packages=['ligo'],
+     install_requires=[
+         'astropy',
+-        'lalsuite',
+         'numpy',
+         'pandas',
+         'python-ligo-lw',
