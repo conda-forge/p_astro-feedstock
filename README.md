@@ -3,13 +3,15 @@ About p_astro
 
 Home: https://lscsoft.docs.ligo.org/p-astro/
 
-Package license: GPLv3
+Package license: GPL-3.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/p_astro-feedstock/blob/master/LICENSE.txt)
 
 Summary: Low-latency estimation of category-wise astrophysical probability of GW candidates
 
+Development: https://git.ligo.org/lscsoft/p-astro/
 
+Documentation: https://lscsoft.docs.ligo.org/p-astro/
 
 Current build status
 ====================
