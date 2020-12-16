@@ -13,7 +13,7 @@ source:
     - no-namespace-package.patch
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -34,7 +34,6 @@ requirements:
   run:
     - astropy
     - h5py
-    - ligo-common
     - numpy
     - pandas
     - python >=3.6
