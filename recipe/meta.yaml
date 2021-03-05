@@ -9,10 +9,11 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 161a358bc0f807e6e1b396e37e551e3913a4afd24fe680e98865606d0b598c0f
   patches:
+    - no-lalsuite-requirement.patch
     - no-namespace-package.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -33,7 +34,6 @@ requirements:
   run:
     - astropy
     - h5py
-    - ligo-common
     - numpy
     - pandas
     - python >=3.6
@@ -49,7 +49,12 @@ test:
     - ligo.computeDiskMass
     - ligo.em_bright
     - ligo.p_astro
+  requires:
+    - pip
   commands:
+    # check dependencies
+    - python -m pip check
+    # check scripts
     - em_bright_categorize --help
     - em_bright_dag_writer --help
     - em_bright_extract --help
@@ -60,7 +65,7 @@ test:
 
 about:
   home: https://lscsoft.docs.ligo.org/p-astro/
-  dev_url: https://git.ligo.org/lscsoft/p-astro/
+  dev_url: https://git.ligo.org/lscsoft/p-astro.git
   doc_url: https://lscsoft.docs.ligo.org/p-astro/
   license: GPL-3.0-or-later
   license_family: GPL
