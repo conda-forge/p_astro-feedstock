@@ -9,57 +9,46 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 810bd5413ba1bce5153a2ab2616a94530dceaa34b14699aa794702a12ecdad04
   patches:
-    - no-lalsuite-requirement.patch
-    - no-namespace-package.patch
+    # simplify requirements for conda-forge
+    - requirements.patch
+    # update namespace package declaration
+    - namespace-package.patch
 
 build:
-  number: 0
   noarch: python
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - em_bright_categorize = ligo.categorize:main
-    - em_bright_dag_writer = ligo.dag_writer:main
-    - em_bright_extract = ligo.utils:extract
-    - em_bright_join = ligo.utils:join
-    - em_bright_train = ligo.utils:train
     - p_astro_compute_means = ligo.p_astro_utils:compute_counts_mean
     - p_astro_histogram_by_bin = ligo.p_astro_utils:histogram_by_bin
 
 requirements:
   host:
     - pip
-    - pytest-runner
-    - python >=3.6
+    - python >=3.7
     - setuptools
   run:
     - astropy
     - h5py
     - numpy
-    - pandas
-    - python >=3.6
+    # no py310, see https://git.ligo.org/lscsoft/p-astro/-/issues/18
+    - python >=3.7,<3.10a0
     - python-lal
     - python-lalinspiral
     - python-lalsimulation
     - python-ligo-lw
-    - scikit-learn 0.22.2.post1
     - scipy
 
 test:
-  imports:
-    - ligo.computeDiskMass
-    - ligo.em_bright
-    - ligo.p_astro
   requires:
     - pip
+    - pytest
   commands:
     # check dependencies
     - python -m pip check
+    # run test suite
+    - python -m pytest --pyargs -ra -v ligo.tests
     # check scripts
-    - em_bright_categorize --help
-    - em_bright_dag_writer --help
-    - em_bright_extract --help
-    - em_bright_join --help
-    - em_bright_train --help
     - p_astro_compute_means --help
     - p_astro_histogram_by_bin --help
 

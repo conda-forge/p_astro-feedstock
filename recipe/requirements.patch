@@ -1,0 +1,16 @@
+--- setup.py	2022-01-21 07:41:18.000000000 +0000
++++ setup.py.2	2022-01-24 15:15:47.648560600 +0000
+@@ -35,12 +35,11 @@
+     ],
+     packages=find_packages(),
+     include_package_data=True,
+-    setup_requires=['pytest-runner'],
++    setup_requires=[],
+     tests_require=['pytest'],
+     namespace_packages=['ligo'],
+     install_requires=[
+         'astropy',
+-        'lalsuite',
+         'numpy',
+         'python-ligo-lw',
+         'scipy',
