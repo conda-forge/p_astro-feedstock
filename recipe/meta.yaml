@@ -1,5 +1,5 @@
 {% set name = "p_astro" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 810bd5413ba1bce5153a2ab2616a94530dceaa34b14699aa794702a12ecdad04
+  sha256: 29293a33e87409dfdc970c06bf7d5756aaea72e139db7fc8f9266f2c2f2f83eb
   patches:
     # simplify requirements for conda-forge
     - requirements.patch
