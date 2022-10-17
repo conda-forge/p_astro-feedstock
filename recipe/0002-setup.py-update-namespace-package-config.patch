@@ -1,0 +1,37 @@
+From b250a9ee218339b7c63ae7be60597c21a012f8c7 Mon Sep 17 00:00:00 2001
+From: "duncan.macleod" <duncan.macleod@ligo.org>
+Date: Mon, 17 Oct 2022 10:25:30 +0100
+Subject: [PATCH 2/2] setup.py: update namespace package config
+
+---
+ setup.py | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index eade3e0..07c059b 100755
+--- a/setup.py
++++ b/setup.py
+@@ -14,7 +14,7 @@
+ #
+ 
+ 
+-from setuptools import setup, find_packages
++from setuptools import setup, find_namespace_packages
+ 
+ setup(
+     name='p_astro',
+@@ -33,10 +33,9 @@ setup(
+         "Topic :: Scientific/Engineering :: Astronomy",
+         "Topic :: Scientific/Engineering :: Physics"
+     ],
+-    packages=find_packages(),
++    packages=find_namespace_packages(include=('ligo',)),
+     include_package_data=True,
+     tests_require=['pytest'],
+-    namespace_packages=['ligo'],
+     install_requires=[
+         'astropy',
+         'numpy',
+-- 
+2.20.1
+

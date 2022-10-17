@@ -1,5 +1,5 @@
 {% set name = "p_astro" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 810bd5413ba1bce5153a2ab2616a94530dceaa34b14699aa794702a12ecdad04
+  sha256: 29293a33e87409dfdc970c06bf7d5756aaea72e139db7fc8f9266f2c2f2f83eb
   patches:
-    # simplify requirements for conda-forge
-    - requirements.patch
-    # update namespace package declaration
-    - namespace-package.patch
+    - 0001-setup.py-update-requirements.patch
+    - 0002-setup.py-update-namespace-package-config.patch
 
 build:
   noarch: python
@@ -31,8 +29,7 @@ requirements:
     - astropy
     - h5py
     - numpy
-    # no py310, see https://git.ligo.org/lscsoft/p-astro/-/issues/18
-    - python >=3.7,<3.10a0
+    - python >=3.7
     - python-lal
     - python-lalinspiral
     - python-lalsimulation
@@ -45,7 +42,8 @@ test:
     - pytest
   commands:
     # check dependencies
-    - python -m pip check
+    - python -m pip check p_astro
+    - python -m pip show p_astro
     # run test suite
     - python -m pytest --pyargs -ra -v ligo.tests
     # check scripts
@@ -63,4 +61,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - deepchatterjeeligo
     - duncanmmacleod
