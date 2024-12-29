@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - p_astro_compute_means = ligo.p_astro_utils:compute_counts_mean
@@ -26,7 +26,7 @@ requirements:
     - python >=3.7
     - setuptools
   run:
-    - astropy
+    - astropy-base
     - h5py
     - numpy
     - python >=3.7
