@@ -31,7 +31,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-p_astro-green.svg)](https://anaconda.org/conda-forge/p_astro) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/p_astro.svg)](https://anaconda.org/conda-forge/p_astro) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/p_astro.svg)](https://anaconda.org/conda-forge/p_astro) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/p_astro.svg)](https://anaconda.org/conda-forge/p_astro) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-p__astro-green.svg)](https://anaconda.org/conda-forge/p_astro) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/p_astro.svg)](https://anaconda.org/conda-forge/p_astro) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/p_astro.svg)](https://anaconda.org/conda-forge/p_astro) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/p_astro.svg)](https://anaconda.org/conda-forge/p_astro) |
 
 Installing p_astro
 ==================
