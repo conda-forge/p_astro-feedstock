@@ -1,5 +1,5 @@
 {% set name = "p_astro" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 29293a33e87409dfdc970c06bf7d5756aaea72e139db7fc8f9266f2c2f2f83eb
+  sha256: 9af4e4a99f9a5e5842bbe06b3e0d90ad3c28c7b9999780541c97dbc09bb51bea
   patches:
     - 0001-setup.py-update-requirements.patch
     - 0002-setup.py-update-namespace-package-config.patch
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - p_astro_compute_means = ligo.p_astro_utils:compute_counts_mean
